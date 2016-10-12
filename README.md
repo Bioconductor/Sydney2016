@@ -6,7 +6,7 @@ This repository contains talk and workshop material for Sydney presentations on 
 
 Participants should come with a wireless-equiped laptop, with [R][] and [RStudio][] installed. Additional instructions will be posted here as the date nears. The workshop will be at an introductory level.
 
-## Talk: Impact of R / Bioconductor in Genomic Research
+## Talk: Impact of R / Bioconductor in 'Omics Research
 
 Slides will be posted here prior to the presentation.
 
