@@ -7,3 +7,5 @@ Authors@R: person("Martin", "Morgan",
 Description: This repository contains talk and workshop material for
    Sydney presentations on October 31, 2016.
 License: Artistic-2.0
+VignetteBuilder: knitr
+Suggests: DESeq2, org.Hs.eg.db, knitr

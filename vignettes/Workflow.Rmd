@@ -1,0 +1,93 @@
+---
+title: "Reproducible Research in R / Bioconductor"
+author: "Martin Morgan"
+date: "October 31, 2016"
+output: html_document
+vignette: >
+  %\VignetteIndexEntry{Reproducible Research in R / Bioconductor}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r setup, echo=FALSE}
+suppressPackageStartupMessages({
+    library(DESeq2)
+    library(org.Hs.eg.db)
+})
+colDataFile <- system.file(package="Sydney2016", "extdata", "airway-colData.tab")
+assayFile <- system.file(package="Sydney2016", "extdata", "airway-assay.tab")
+```
+
+# Introduction
+
+# Data input
+
+Phenotypic data
+
+```{r, eval=FALSE}
+colDataFile <- file.chooose()    # find 'airway-colData.tab'
+```
+
+```{r}
+colData <- read.table(colDataFile)
+colData
+
+```
+Expression data
+
+
+```{r, eval=FALSE}
+assayFile <- file.chooose()    # find 'airway-assay.tab'
+```
+```{r}
+assay <- read.table(assayFile)
+head(assay)
+```
+
+# Exploration
+
+```{r}
+plot(density(rowMeans(asinh(assay))))
+```
+
+```{r}
+d <- dist(t(asinh(assay)))
+plot(cmdscale(d), pch=19, cex=2)
+plot(cmdscale(d), pch=19, cex=2, col=colData$cell)
+plot(cmdscale(d), pch=19, cex=2, col=colData$dex)
+```
+
+# Differential expression
+
+Set-up
+
+```{r}
+library(DESeq2)
+dds <- DESeqDataSetFromMatrix(assay, colData, ~ cell + dex)
+```
+
+Analysis
+
+```{r}
+dds <- DESeq(dds)
+dds
+```
+
+Results
+
+```{r}
+result <- results(dds)
+result
+ridx <- head(order(result$padj), 10)
+top = result[ridx,]
+top
+```
+
+# Comprehension
+
+```{r}
+library(org.Hs.eg.db)
+mapIds(org.Hs.eg.db, rownames(top), "SYMBOL", "ENSEMBL")
+top$Symbol <- mapIds(org.Hs.eg.db, rownames(top), "SYMBOL", "ENSEMBL")
+top
+```
+
