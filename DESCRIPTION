@@ -1,6 +1,6 @@
 Package: Sydney2016
 Title: Workshop: Introduction to Reproducible Research in R / Bioconductor
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Martin", "Morgan",
     email = "Martin.Morgan@RoswellPark.org",
     role = c("aut", "cre"))
@@ -8,4 +8,4 @@ Description: This repository contains talk and workshop material for
    Sydney presentations on October 31, 2016.
 License: Artistic-2.0
 VignetteBuilder: knitr
-Suggests: DESeq2, org.Hs.eg.db, knitr
+Suggests: DESeq2, org.Hs.eg.db, knitr, BiocStyle

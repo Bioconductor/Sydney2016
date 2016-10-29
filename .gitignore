@@ -1,9 +1,11 @@
+*pdf
 *aux
 *log
 *tex
 *out
 *snm
-*pdf
 *nav
 *toc
+*vrb
+*html
 vignettes/*R
