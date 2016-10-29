@@ -149,23 +149,26 @@ ggplot(df, aes(x=x, y=y)) +
     \item
       \textbf<1,2>{biocViews}\footnote[frame]{\url{https://bioconductor.org/packages/release}}
     \item
-      Workflows\footnote[frame]{\url{http://bioconductor.org/help/workflows}}
-    \item \textbf<3>{Landing pages}\footnote[frame]{e.g.,
+      \textbf<3>{Workflows}\footnote[frame]{\url{http://bioconductor.org/help/workflows}},
+      F1000
+    \item \textbf<4>{Landing pages}\footnote[frame]{e.g.,
       \url{https://bioconductor.org/packages/edgeR}}
       \begin{itemize}
-      \item Installation instructions
-      \item Documentation links
+      \item Description
+      \item Installation
+      \item Documentation
       \end{itemize}
-    \item \textbf<4-6>{Vignettes}\footnote[frame]{e.g.,
+    \item \textbf<5-7>{Vignettes}\footnote[frame]{e.g.,
       \url{https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.pdf}}
     \end{itemize}
     \column{.6\textwidth}
     \includegraphics<1>[width=.6\textwidth]{biocViews.png}
     \includegraphics<2>[width=.9\textwidth]{ChIPSeq-views.png}
-    \includegraphics<3>[width=.9\textwidth]{edgeR-landing-page.png}
-    \includegraphics<4>[width=.8\textwidth]{DESeq-vignette-1.png}
-    \includegraphics<5>[width=.8\textwidth]{DESeq-vignette-2.png}
-    \includegraphics<6>[width=.8\textwidth]{DESeq-vignette-3.png}
+    \includegraphics<3>[width=.9\textwidth]{Workflows.png}
+    \includegraphics<4>[width=.9\textwidth]{edgeR-landing-page.png}
+    \includegraphics<5>[width=.8\textwidth]{DESeq-vignette-1.png}
+    \includegraphics<6>[width=.8\textwidth]{DESeq-vignette-2.png}
+    \includegraphics<7>[width=.8\textwidth]{DESeq-vignette-3.png}
   \end{columns}
 \end{frame}
 
@@ -191,24 +194,25 @@ result(DESeq(dds))
 \section{A typical work flow}
 
 \begin{frame}{A typical work flow: RNA-seq}
-  Research question
-  \begin{itemize}
-  \item Designed experiment
-  \item Gene-level differential expression
-  \item RNA-seq data
-  \end{itemize}
-  Data processing steps
-  \begin{itemize}
-  \item Quality assessment.
-  \item Alignment and summary to count table.
-  \item Assessment of differential expression.
-  \item Results placed in context, e.g., gene set enrichment.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{RNA-seq}
-  \centering\includegraphics[width=.7\textwidth]{rna4.jpg}
-  \medskip\par\url{http://bio.lundberg.gu.se/courses/vt13/rnaseq.html}
+  \begin{columns}
+    \column{.5\textwidth}
+    Research question
+    \begin{itemize}
+    \item Designed experiment
+    \item Gene-level differential expression
+    \item RNA-seq data
+    \end{itemize}
+    Data processing steps
+    \begin{itemize}
+    \item Quality assessment.
+    \item Alignment and summary to count table.
+    \item Assessment of differential expression.
+    \item Results placed in context, e.g., gene set enrichment.
+    \end{itemize}
+    \column{.5\textwidth}
+    \centering\includegraphics[width=\textwidth]{rna4.jpg}
+    \medskip\par\url{http://bio.lundberg.gu.se/courses/vt13/rnaseq.html}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Pre-processing, alignment}  
@@ -297,18 +301,20 @@ result(DESeq(dds))
 \begin{frame}{Key classes}
   \begin{columns}
     \column{.5\textwidth}
-    \Biocpkg{GenomicRanges}
+    \textbf<1>{\Biocpkg{GenomicRanges}}
     \begin{itemize}
     \item Genomic coordinates to represent data (e.g., aligned reads)
       and annotations (e.g., genes, binding sites).
     \item \Rcode{findOverlaps()} and friends.
     \end{itemize}
-    \Biocpkg{SummarizedExperiment}
+    \textbf<2>{\Biocpkg{SummarizedExperiment}}
     \begin{itemize}
     \item Coordinate `assay' data with row (feature) and column (sample)
       information.
     \end{itemize}
     \column{.5\textwidth}
+    \includegraphics<1>[width=\textwidth]{GRanges.pdf}
+    \includegraphics<2>[width=\textwidth]{SummarizedExperiment.pdf}
   \end{columns}
 \end{frame}
 
@@ -380,8 +386,8 @@ result(DESeq(dds))
 \section{Summary}
 
 \begin{frame}{Acknowledgments}
-  Core team (current \& recent): Yubo Cheng, Valerie Obenchain,Herve
-  Pages, Marcel Ramos, Lori Shepherd, Dan Tenenbaum, Greg Wargula.
+  Core team (current \& recent): Yubo Cheng, Valerie Obenchain, Herv\'e
+  Pag\`es, Marcel Ramos, Lori Shepherd, Dan Tenenbaum, Greg Wargula.
   \medskip\par
   Technical advisory board: Vincent Carey, Kasper Hansen, Wolfgang
   Huber, Robert Gentleman, Rafael Irizzary, Levi Waldron, Michael
