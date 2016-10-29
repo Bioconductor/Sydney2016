@@ -1,0 +1,9 @@
+*aux
+*log
+*tex
+*out
+*snm
+*pdf
+*nav
+*toc
+vignettes/*R
