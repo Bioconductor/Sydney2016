@@ -228,3 +228,12 @@ top
 ```
 
 [org.Hs.eg.db]: https://bioconductor.org/packages/org.Hs.eg.db
+
+# Reproducibility
+
+The calculations here are made more reproducible by reporting the
+version of software used in the analysis, as follows:
+
+```{r}
+sessionInfo()
+```
