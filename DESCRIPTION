@@ -1,6 +1,6 @@
 Package: Sydney2016
 Title: Workshop: Introduction to Reproducible Research in R / Bioconductor
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: person("Martin", "Morgan",
     email = "Martin.Morgan@RoswellPark.org",
     role = c("aut", "cre"))
